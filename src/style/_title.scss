@@ -1,0 +1,17 @@
+.title {
+  color: rgba(0, 0, 0, 1);
+  font-size: 60px;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  text-align: center;
+  @media (max-width: 799px) {
+    font-size: 50px;
+  }
+  @media (max-width: 425px) {
+    font-size: 44px;
+  }
+  @media (max-width: 336px) {
+    font-size: 41px;
+  }
+}
