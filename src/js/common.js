@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     tabs
       .filter((tab) => tab.dataset.tab !== selectedTab)
       .forEach((tab) => {
-        tab.classList.add("slide--hide");
+        tab.classList.add("card--hide");
       });
   };
   hideTabs();
@@ -17,11 +17,11 @@ document.addEventListener("DOMContentLoaded", () => {
     selectedTab = e.target.dataset.tabId;
     tabs.forEach((tab) => {
       if (tab.dataset.tab !== selectedTab) {
-        tab.classList.add("slide--hide");
-        tab.classList.remove("slide--show");
+        tab.classList.add("card--hide");
+        tab.classList.remove("card--show");
       } else {
-        tab.classList.add("slide--show");
-        tab.classList.remove("slide--hide");
+        tab.classList.add("card--show");
+        tab.classList.remove("card--hide");
       }
     });
 

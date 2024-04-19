@@ -10,9 +10,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 64px;
     @media (max-width: 650px) {
       gap: 40px;
+    }
+    @media (max-width: 400px) {
+      gap: 30px;
     }
   }
   &__top {
@@ -21,8 +23,16 @@
     display: flex;
     flex-direction: column;
     gap: 32px;
+    margin-bottom: 63px;
+    @media (max-width: 800px) {
+      gap: 10px;
+      margin-bottom: 30px;
+    }
     @media (max-width: 799px) {
       gap: 20px;
+    }
+    @media (max-width: 650px) {
+      margin-bottom: 0;
     }
   }
   &__center {
@@ -31,27 +41,94 @@
     display: flex;
     flex-direction: column;
     gap: 32px;
+    margin-bottom: 120px;
+    @media (max-width: 922px) {
+      margin-bottom: 40px;
+    }
+    @media (max-width: 650px) {
+      margin-bottom: 0;
+    }
   }
   &__buttons {
     display: flex;
     gap: 16px;
     align-items: center;
     justify-content: center;
+    @media (max-width: 660px) {
+      flex-wrap: wrap;
+    }
   }
-
-  &__slide {
+  &__card-inner {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      display: block;
+      z-index: 2;
+      width: 85%;
+      padding: 42px;
+      border: 2px solid rgba(0, 0, 0, 0.04);
+      box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.12);
+      border-radius: 32px;
+      margin: auto;
+      left: 0;
+      right: 0;
+      bottom: -28px;
+      background-color: #ffffff;
+      @media (max-width: 922px) {
+        display: none;
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      z-index: 1;
+      width: 80%;
+      padding: 42px;
+      border: 2px solid rgba(0, 0, 0, 0.04);
+      box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.12);
+      border-radius: 32px;
+      margin: auto;
+      left: 0;
+      right: 0;
+      bottom: -56px;
+      @media (max-width: 922px) {
+        display: none;
+      }
+    }
+  }
+  &__card {
+    background-color: #ffffff;
+    position: relative;
+    z-index: 3;
     padding: 42px;
     border: 2px solid rgba(0, 0, 0, 0.04);
     box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.12);
     display: flex;
     justify-content: space-between;
     border-radius: 32px;
+    @media (max-width: 922px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    @media (max-width: 500px) {
+      padding: 16px;
+    }
+    @media (max-width: 378px) {
+      padding: 16px;
+    }
   }
   &__left {
     display: flex;
     flex-direction: column;
     gap: 32px;
     max-width: 444px;
+    @media (max-width: 922px) {
+      text-align: center;
+      gap: 16px;
+    }
   }
   &__title {
     font-size: 60px;
@@ -60,13 +137,33 @@
     letter-spacing: -0.05em;
     text-align: left;
     color: rgba(0, 0, 0, 1);
+    @media (max-width: 922px) {
+      text-align: center;
+      font-size: 50px;
+    }
+    @media (max-width: 800px) {
+      text-align: center;
+      font-size: 40px;
+    }
+    @media (max-width: 396px) {
+      font-size: 30px;
+    }
   }
   &__list {
     margin-left: 20px;
+    @media (max-width: 922px) {
+      margin-left: 0;
+    }
   }
   &__item {
     color: rgba(42, 43, 47, 0.9);
     list-style: disc;
+    @media (max-width: 922px) {
+      list-style: none;
+    }
+    @media (max-width: 378px) {
+      text-align: left;
+    }
   }
   &__btn {
     font-weight: 600;
@@ -78,10 +175,14 @@
     padding: 16px 32px;
     border-radius: 12px;
   }
-  &__right {
-  }
   &__img {
     max-width: 507px;
+    @media (max-width: 1100px) {
+      max-width: 350px;
+    }
+    @media (max-width: 440px) {
+      max-width: 100%;
+    }
   }
   &__button {
     margin: 0 auto;
@@ -93,10 +194,10 @@
   color: rgba(255, 255, 255, 1);
 }
 
-.slide--hide {
+.card--hide {
   display: none;
 }
 
-.slide--show {
+.card--show {
   display: flex;
 }
